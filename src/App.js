@@ -43,7 +43,7 @@ function App() {
     };
 
     useEffect(()=>{
-        Axios.get("https://mermories.herokuapp.com/read")
+        Axios.get("https://mermories.herokuapp.com/gitread")
             .then((response) =>{
                 setListOfFriends(response.data);
             })
@@ -60,14 +60,12 @@ function App() {
         onChange = {(event) =>{setName(event.target.value);
         }} 
         />
-        <input type = "number"  placeholder="Friend age..."
-        onChange = {(event) =>{setAge(event.target.value);
-        }}
+        <input type = "number"  placeholder="Friend age....  "
         />
         <button onClick={addFriend}>Add Friend</button>
         </div>   
 
-        <div className="listOfFriends">
+        <div >
         {ListOfFriends.map((val)=>{
             return (
             <div className="friendCointainer">
