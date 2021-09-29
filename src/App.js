@@ -10,7 +10,7 @@ function App() {
     const [ListOfFriends, setListOfFriends] = useState([]);
 
     const addFriend = ()=>{
-        Axios.post("http://localhost:3001/addfriend",{ 
+        Axios.post("https://mermories.herokuapp.com/addfriend",{ 
             name:name, 
             age:age, 
            }).then ((response) =>{
@@ -21,7 +21,7 @@ function App() {
     const updateFriend = (id) => {
        const newAge = prompt("Enter new age: ")
 
-       Axios.put("http://localhost:3001/update",{
+       Axios.put("https://mermories.herokuapp.com/update",{
            newAge:Number(newAge),
            id:id        
        }).then(()=>{
@@ -34,7 +34,7 @@ function App() {
     };
 
     const deleteFriend=(id)=>{
-         Axios.delete(`http://localhost:3001/delete/${id}`).then(()=>{
+         Axios.delete(`https://mermories.herokuapp.com/delete/${id}`).then(()=>{
              setListOfFriends(ListOfFriends.filter((val) => {
                 
                 return val._id !== id;
@@ -43,7 +43,7 @@ function App() {
     };
 
     useEffect(()=>{
-        Axios.get("http://localhost:3001/read")
+        Axios.get("https://mermories.herokuapp.com/read")
             .then((response) =>{
                 setListOfFriends(response.data);
             })
