@@ -61,11 +61,13 @@ function App() {
         }} 
         />
         <input type = "number"  placeholder="Friend age....  "
+        onChange = {(event) =>{setAge(event.target.value);
+        }}
         />
         <button onClick={addFriend}>Add Friend</button>
         </div>   
 
-        <div >
+        <div className="listOfFriends">
         {ListOfFriends.map((val)=>{
             return (
             <div className="friendCointainer">
