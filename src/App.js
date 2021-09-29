@@ -43,7 +43,7 @@ function App() {
     };
 
     useEffect(()=>{
-        Axios.get("https://mermories.herokuapp.com/gitread")
+        Axios.get("https://mermories.herokuapp.com/read")
             .then((response) =>{
                 setListOfFriends(response.data);
             })
